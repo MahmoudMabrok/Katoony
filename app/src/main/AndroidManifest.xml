@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="com.mahmoudmabrok.kartony">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,13 +15,17 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:configChanges="orientation">
+            android:configChanges="orientation|screenSize">
             <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ShowActivity"
+            android:configChanges="orientation|screenSize">
+
         </activity>
     </application>
 

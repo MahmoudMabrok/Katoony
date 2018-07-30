@@ -7,52 +7,28 @@
     android:orientation="vertical"
     tools:context="com.mahmoudmabrok.kartony.MainActivity">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <view
-            android:id="@+id/player1"
-            class="com.google.android.youtube.player.YouTubePlayerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </FrameLayout>
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.3"
+        android:layout_marginBottom="25dp"
+        android:layout_weight="0.5"
         android:orientation="vertical">
-        <!--
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="onOne"
-                    android:text="One" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="onTwo"
-                    android:text="Two" />
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:onClick="PlayNext"
-                    android:text="PlayNext" />
-        -->
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 
 
-</LinearLayout>
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-8802187210935584/1702116601"></com.google.android.gms.ads.AdView>
+
+</LinearLayout><!-- ads:adUnitId="ca-app-pub-8802187210935584/1702116601"  "ca-app-pub-3940256099942544/6300978111"-->

@@ -1,14 +1,13 @@
 package com.mahmoudmabrok.kartony;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.google.android.youtube.player.YouTubePlayer;
 
 import java.util.ArrayList;
 
@@ -20,7 +19,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
     private Context mContext;
     private ArrayList<VideoModel> modelList;
-    private YouTubePlayer youTubePlayer;
+
 
 
     public RecyclerViewAdapter(Context context, ArrayList<VideoModel> modelList) {
@@ -58,18 +57,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 @Override
                 public void onClick(View v) {
                     String url = model.getMessage();
-                    if (youTubePlayer != null) {
-                        youTubePlayer.loadVideo(url);
-                    }
+                    Intent intent = new Intent(mContext, ShowActivity.class);
+                    intent.putExtra("url", url);
+                    mContext.startActivity(intent);
                 }
             });
-
-
         }
-    }
-
-    public void setYouTubePlayer(YouTubePlayer youTubePlayer) {
-        this.youTubePlayer = youTubePlayer;
     }
 
 
@@ -94,9 +87,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         public ViewHolder(final View itemView) {
             super(itemView);
 
-            this.imgUser = (ImageView) itemView.findViewById(R.id.img_user);
-            this.itemTxtTitle = (TextView) itemView.findViewById(R.id.item_txt_title);
-            this.itemTxtMessage = (TextView) itemView.findViewById(R.id.item_txt_video_url);
+            this.imgUser = itemView.findViewById(R.id.img_user);
+            this.itemTxtTitle = itemView.findViewById(R.id.item_txt_title);
+            this.itemTxtMessage = itemView.findViewById(R.id.item_txt_video_url);
         }
 
     }

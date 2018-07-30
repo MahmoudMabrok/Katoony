@@ -1,9 +1,7 @@
 package com.mahmoudmabrok.kartony;
 
 import android.app.Application;
-import android.content.Context;
 
-import com.danikula.videocache.HttpProxyCacheServer;
 import com.pixplicity.easyprefs.library.Prefs;
 
 /**
@@ -11,12 +9,12 @@ import com.pixplicity.easyprefs.library.Prefs;
  */
 
 public class App extends Application {
-    private HttpProxyCacheServer proxy;
 
-    public static HttpProxyCacheServer getProxy(Context context) {
-        App app = (App) context.getApplicationContext();
-        return app.proxy == null ? (app.proxy = app.newProxy()) : app.proxy;
-    }
+
+    /**
+     * APPid : ca-app-pub-8802187210935584~6180842695
+     * banner  : ca-app-pub-8802187210935584/1702116601
+     */
 
     @Override
     public void onCreate() {
@@ -30,7 +28,4 @@ public class App extends Application {
 
     }
 
-    private HttpProxyCacheServer newProxy() {
-        return new HttpProxyCacheServer(this);
-    }
 }
