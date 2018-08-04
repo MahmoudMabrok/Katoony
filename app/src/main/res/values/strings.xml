@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Kartony</string>
-    <string name="title_activity_main2">Main2Activity</string>
-
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="connect_error">Check Network Connection</string>
+    <string name="youtube_error">Please Install or Upgrade Youtube Player</string>
+
     <string name="prog_Wait_msg">Loading The  Player  Pleas wait</string>
 </resources>

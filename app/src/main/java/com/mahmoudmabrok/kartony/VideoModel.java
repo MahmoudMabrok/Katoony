@@ -46,7 +46,7 @@ public class VideoModel {
         list.add(new VideoModel(" قصص الأنبياء", ""));
         list.add(new VideoModel(" غزوات الرسول عليه السلام", ""));
         list.add(new VideoModel(" فارس الفرات", "aHZk0zSxkaE"));
-        list.add(new VideoModel(" صقر القوقاز", "Qmfb-All840"));
+    /*    list.add(new VideoModel(" صقر القوقاز", "Qmfb-All840"));
         // list.add(new VideoModel(" فيلم كارتون الملك","SBfKxdD94IE"));
         // list.add(new VideoModel(" كارتون قصة أسير","nI5IPLZ5Oyg"));
         // list.add(new VideoModel("القراصنه وكنز الذهب","ft_V40qKfhM"));
@@ -63,7 +63,7 @@ public class VideoModel {
         list.add(new VideoModel(" القبطان", "cNmBsCFBscM"));
         list.add(new VideoModel(" علي بابا", "TL7CeQtfQt8"));
         list.add(new VideoModel(" جزيرة اللؤلؤ", "DIIN6KgxxQc"));
-
+*/
         return list;
     }
 

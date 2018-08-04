@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">كرتون تربوي </string>
+    <string name="app_name">أفلام كرتون</string>
     <string name="title_activity_main2">Main2Activity</string>
     <string name="hello_world">Hello world!</string>
     <string name="prog_Wait_msg">برجاء الإنتظار لحين تحميل مشغل الفيديو </string>
+    <string name="youtube_error">برجاء تثبي مشغل يوتيوب او تحديثه  </string>
+    <string name="connect_error">برجاء تشغيل الانترنت وإعادة المحاولة </string>
+
 </resources>
