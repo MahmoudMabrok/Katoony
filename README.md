@@ -4,6 +4,7 @@ Android app that collects isalmic videos for childeren
 # History
 ## V1.3 (5/2020)
 - use kotlin 
+- use coil as Image Loading
 - remove ads 
 - load thumnail of videos 
 - add more videos 
