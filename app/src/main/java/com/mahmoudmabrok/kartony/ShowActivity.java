@@ -30,7 +30,7 @@ public class ShowActivity extends YouTubeBaseActivity {
         setContentView(R.layout.activity_show);
 
 
-        //   Log.v(TAG , "OnCreate") ;
+
 
         textView = findViewById(R.id.textViewError);
         textViewTitle = findViewById(R.id.textViewTitle);
@@ -75,8 +75,7 @@ public class ShowActivity extends YouTubeBaseActivity {
 
 
     private boolean isNetworkAvailable() {
-        ConnectivityManager connectivityManager
-                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
@@ -90,7 +89,6 @@ public class ShowActivity extends YouTubeBaseActivity {
             mYouTubePlayer.play();
         }
 
-        //   Log.v(TAG , "onResume");
     }
 
     @Override
