@@ -29,9 +29,6 @@ public class ShowActivity extends YouTubeBaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show);
 
-
-
-
         textView = findViewById(R.id.textViewError);
         textViewTitle = findViewById(R.id.textViewTitle);
 
@@ -56,15 +53,6 @@ public class ShowActivity extends YouTubeBaseActivity {
             @Override
             public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
                 if (youTubeInitializationResult.isUserRecoverableError()) {
-               /*     youTubeInitializationResult.getErrorDialog(ShowActivity.this, R.string.app_name, new DialogInterface.OnCancelListener() {
-                        @Override
-                        public void onCancel(DialogInterface dialog) {
-                            System.exit(0);
-                        }
-                    }).show();
-
-               */
-
                     textView.setText(getString(R.string.youtube_error));
                 }
             }
@@ -94,9 +82,7 @@ public class ShowActivity extends YouTubeBaseActivity {
     @Override
     protected void onPause() {
         super.onPause();
-
         if (mYouTubePlayer != null) {
-
             mYouTubePlayer.pause();
         }
     }

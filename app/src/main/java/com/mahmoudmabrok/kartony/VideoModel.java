@@ -22,15 +22,15 @@ public class VideoModel {
         ArrayList<VideoModel> list = new ArrayList<>();
 
         list.add(new VideoModel("الناصر صلاح الدين (فتح القدس)", "wnNA94tOmGw"));
-        //list.add(new VideoModel("محمد الفاتح (فتح القسطنطينية)", "dALv4zLU2GY"));
+        list.add(new VideoModel("محمد الفاتح (فتح القسطنطينية)", "dALv4zLU2GY"));
         list.add(new VideoModel("طارق بن زياد (فتح الأندلس)", "TWNGn4okAYs"));
         list.add(new VideoModel("أسد عين جالوت (سيف الدين قطز)", "faFgDwP96bo"));
         list.add(new VideoModel("صقر القوقاز (شامل باسييف)", "Qmfb-All840"));
 
         list.add(new VideoModel("فارس الأندلس", "B-I-BX6Wt9M"));
-        //  list.add(new VideoModel("عثمان الأندلسي", "ntvAWYe3ePM"));
+        list.add(new VideoModel("عثمان الأندلسي", "ntvAWYe3ePM"));
         list.add(new VideoModel("الأسير عروج", "nI5IPLZ5Oyg"));
-        //   list.add(new VideoModel("معركة ملاذكر (القائد ألب أرسلان)", "4nBK-rteglk"));
+        list.add(new VideoModel("معركة ملاذكر (القائد ألب أرسلان)", "4nBK-rteglk"));
         list.add(new VideoModel("رحلة الخلود (قصة أصحاب الأخدود)", "LUFF6ylV-2Y"));
 
         list.add(new VideoModel(" فيلم المهند وفريق النينجا (رجل المستحيل)", "2PxLZcft3xg"));
@@ -42,11 +42,9 @@ public class VideoModel {
         list.add(new VideoModel(" فيلم رحلة الأصدقاء", "ZfZveGxwTww"));
         list.add(new VideoModel(" فيلم قرية الزيتون", "-7hi__AEbJM"));
         list.add(new VideoModel(" فيلم السندباد البحري", "aFkYV74iIZk"));
-        //  list.add(new VideoModel(" افلام إسلام ويب",""));
-        list.add(new VideoModel(" قصص الأنبياء", ""));
-        list.add(new VideoModel(" غزوات الرسول عليه السلام", ""));
         list.add(new VideoModel(" فارس الفرات", "aHZk0zSxkaE"));
-    /*    list.add(new VideoModel(" صقر القوقاز", "Qmfb-All840"));
+
+        list.add(new VideoModel(" صقر القوقاز", "Qmfb-All840"));
         // list.add(new VideoModel(" فيلم كارتون الملك","SBfKxdD94IE"));
         // list.add(new VideoModel(" كارتون قصة أسير","nI5IPLZ5Oyg"));
         // list.add(new VideoModel("القراصنه وكنز الذهب","ft_V40qKfhM"));
@@ -63,7 +61,6 @@ public class VideoModel {
         list.add(new VideoModel(" القبطان", "cNmBsCFBscM"));
         list.add(new VideoModel(" علي بابا", "TL7CeQtfQt8"));
         list.add(new VideoModel(" جزيرة اللؤلؤ", "DIIN6KgxxQc"));
-*/
         return list;
     }
 
