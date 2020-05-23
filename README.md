@@ -2,7 +2,7 @@
 Android app that collects isalmic videos for childeren 
 
 # History
-## V1.3 
+## V1.3 (5/2020)
 - use kotlin 
 - remove ads 
 - load thumnail of videos 
@@ -10,7 +10,7 @@ Android app that collects isalmic videos for childeren
 - remove broken/deleted videos 
 
 
-## V1.0-1.2 
+## V1.0-1.2 (8/2018)
 - Java code 
 - ADS 
 - some missed files 
