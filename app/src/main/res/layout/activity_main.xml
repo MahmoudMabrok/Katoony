@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:background="#aaddaa"
     tools:context="com.mahmoudmabrok.kartony.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvVideos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="2"
         tools:itemCount="5"
         tools:listitem="@layout/item_recycler_list" />
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:visibility="gone"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-8802187210935584/3362981586"></com.google.android.gms.ads.AdView>
 
 
 </LinearLayout>
 
+    <!--
+    ca-app-pub-8802187210935584/3362981586
+        ca-app-pub-3940256099942544/6300978111-->

@@ -30,7 +30,7 @@ class RecyclerViewAdapter(private val mContext: Context,
         holder.imgUser.load("https://img.youtube.com/vi/${model.message}/default.jpg")
 
         holder.itemTxtTitle.text = model.title
-        holder.itemTxtMessage.text = model.message
+   //     holder.itemTxtMessage.text = model.message
 
     }
 
@@ -46,7 +46,7 @@ class RecyclerViewAdapter(private val mContext: Context,
     inner class VideoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         val imgUser: ImageView = itemView.findViewById(R.id.img_user)
         val itemTxtTitle: TextView = itemView.findViewById(R.id.item_txt_title)
-        val itemTxtMessage: TextView = itemView.findViewById(R.id.item_txt_video_url)
+        // val itemTxtMessage: TextView = itemView.findViewById(R.id.item_txt_video_url)
 
         override fun onClick(v: View) {
             clickList.onClick(adapterPosition)

@@ -20,7 +20,7 @@ public class VideoModel {
         list.add(new VideoModel("عثمان الأندلسي", "1tHeYjmJIpc"));
 //        list.add(new VideoModel("محمد الفاتح (فتح القسطنطينية)", "dALv4zLU2GY"));
         list.add(new VideoModel("طارق بن زياد (فتح الأندلس)", "TWNGn4okAYs"));
-        list.add(new VideoModel("أسد عين جالوت (سيف الدين قطز)", "faFgDwP96bo"));
+    /*    list.add(new VideoModel("أسد عين جالوت (سيف الدين قطز)", "faFgDwP96bo"));*/
         list.add(new VideoModel("صقر القوقاز (شامل باسييف)", "Qmfb-All840"));
 
         list.add(new VideoModel("فارس الأندلس", "B-I-BX6Wt9M"));
@@ -41,7 +41,7 @@ public class VideoModel {
         list.add(new VideoModel("فارس الأندلس", "B-I-BX6Wt9M"));
 
         list.add(new VideoModel("فيلم كارتون ابن الغابه (قصة حى بن يقظان)", "4CFHemra-RM"));
-        list.add(new VideoModel("وفاء الأبطال", "nCUc_TE1Cxc"));
+        /*   list.add(new VideoModel("وفاء الأبطال", "nCUc_TE1Cxc"));*/
         list.add(new VideoModel("جياد الشرق", "hTgyn6JfUP4"));
         list.add(new VideoModel(" القبطان", "cNmBsCFBscM"));
         list.add(new VideoModel(" جزيرة اللؤلؤ", "DIIN6KgxxQc"));
