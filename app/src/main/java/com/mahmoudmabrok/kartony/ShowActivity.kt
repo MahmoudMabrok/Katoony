@@ -1,106 +1,35 @@
-package com.mahmoudmabrok.kartony;
+package com.mahmoudmabrok.kartony
 
-import android.content.Context;
-import android.content.res.Configuration;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.Bundle;
-import android.widget.TextView;
-
-import com.google.android.youtube.player.YouTubeBaseActivity;
-import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubePlayer;
-import com.google.android.youtube.player.YouTubePlayerView;
-
-public class ShowActivity extends YouTubeBaseActivity {
-
-    static final String API_KEY = "AIzaSyDE_Bc3qQe7TZCICNPKbJVJ_6gbxd9aRyg";
-
-    private static final String TAG = "ShowActivity";
-
-    YouTubePlayerView playerView;
-    YouTubePlayer mYouTubePlayer;
-
-    private TextView textView;
-    private TextView textViewTitle;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show);
-
-        textView = findViewById(R.id.textViewError);
-        textViewTitle = findViewById(R.id.textViewTitle);
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import com.mahmoudmabrok.kartony.databinding.ActivityShowBinding
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 
 
-        String title = getIntent().getStringExtra("title");
-        textViewTitle.setText(title);
+class ShowActivity : AppCompatActivity() {
+    private lateinit var mBinding: ActivityShowBinding
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-        playerView = findViewById(R.id.player1);
-        playerView.initialize(API_KEY, new YouTubePlayer.OnInitializedListener() {
-            @Override
-            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-                mYouTubePlayer = youTubePlayer;
-                String url = getIntent().getStringExtra("url");
-                if (isNetworkAvailable()) {
-                    youTubePlayer.loadVideo(url);
-                } else {
-                    textView.setText(R.string.connect_error);
-                }
+        mBinding = ActivityShowBinding.inflate(layoutInflater)
+        setContentView(mBinding.root)
+
+        val title = intent.getStringExtra("title")
+
+        val id = intent.getStringExtra("id") ?: ""
+        mBinding.textViewTitle.text = title
+
+        lifecycle.addObserver(mBinding.youtubePlayerView)
+
+        mBinding.youtubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+            override fun onReady(youTubePlayer: YouTubePlayer) {
+                youTubePlayer.loadVideo(id, 0f)
             }
-
-            @Override
-            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-                if (youTubeInitializationResult.isUserRecoverableError()) {
-                    textView.setText(getString(R.string.youtube_error));
-                }
-            }
-        });
+        })
 
 
     }
-
-
-    private boolean isNetworkAvailable() {
-        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
-        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
-    }
-
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        if (mYouTubePlayer != null) {
-            mYouTubePlayer.play();
-        }
-
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if (mYouTubePlayer != null) {
-            mYouTubePlayer.pause();
-        }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
-    @Override
-    public void onBackPressed() {
-        if (mYouTubePlayer != null &&
-                getResources().getConfiguration().orientation != Configuration.ORIENTATION_PORTRAIT) {
-            mYouTubePlayer.setFullscreen(false);  //it works
-        } else {
-            super.onBackPressed();
-        }
-    }
-
 
 }

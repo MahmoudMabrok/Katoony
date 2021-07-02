@@ -8,12 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
-import com.mahmoudmabrok.kartony.MainActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import com.mahmoudmabrok.kartony.databinding.ActivityMainBinding
 import java.util.*
 
 class MainActivity : AppCompatActivity(), ClickList {
 
+    private lateinit var mBinding: ActivityMainBinding
     private var mAdapter: RecyclerViewAdapter? = null
     private var modelList = ArrayList<VideoModel>()
     private var mVideoModel: VideoModel? = null
@@ -21,22 +21,23 @@ class MainActivity : AppCompatActivity(), ClickList {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        mBinding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
         MobileAds.initialize(this)
 
         modelList = VideoModel.getList()
         mAdapter = RecyclerViewAdapter(this@MainActivity, modelList, this)
-        rvVideos.adapter = mAdapter
+        mBinding.rvVideos.adapter = mAdapter
 
 
         val adRequest = AdRequest.Builder().build()
-        adView.loadAd(adRequest)
-        adView.adListener = object : AdListener() {
+        mBinding.adView.loadAd(adRequest)
+        mBinding.adView.adListener = object : AdListener() {
             override fun onAdLoaded() {
                 super.onAdLoaded()
                 isLoaded = true
-                adView.visibility = View.VISIBLE
+                mBinding.adView.visibility = View.VISIBLE
                 Log.d("MainActivity", "onAdLoaded:")
             }
         }
@@ -47,12 +48,12 @@ class MainActivity : AppCompatActivity(), ClickList {
     override fun onResume() {
         super.onResume()
         if (isLoaded)
-            adView.visibility = View.VISIBLE
+            mBinding.adView.visibility = View.VISIBLE
     }
 
     override fun onPause() {
         super.onPause()
-        adView.visibility = View.GONE
+        mBinding.adView.visibility = View.GONE
     }
 
     override fun onClick(position: Int) {
@@ -60,7 +61,7 @@ class MainActivity : AppCompatActivity(), ClickList {
         if (mVideoModel != null) {
             val url = mVideoModel!!.message
             val intent = Intent(this@MainActivity, ShowActivity::class.java)
-            intent.putExtra("url", url)
+            intent.putExtra("id", url)
             intent.putExtra("title", mVideoModel!!.title)
             startActivity(intent)
         }

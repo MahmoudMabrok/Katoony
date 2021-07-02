@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:layout_marginBottom="16dp"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         tools:itemCount="5"
         tools:listitem="@layout/item_recycler_list" />
@@ -22,9 +23,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:visibility="gone"
+        android:visibility="invisible"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-8802187210935584/3362981586"></com.google.android.gms.ads.AdView>
+        ads:adUnitId="ca-app-pub-8802187210935584/3362981586" />
 
 
 </LinearLayout>
